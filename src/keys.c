@@ -6,16 +6,16 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 16:39:43 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/28 17:00:53 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/05 12:13:16 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int handle_keys(int o, t_vars *vars)
+int handle_keys(int o)
 {
 	if (o == XK_Escape)
-		ft_close(vars);
+		ft_close();
 	else if (o == XK_w)
 		move_front();
 	else if (o == XK_s)
@@ -24,8 +24,6 @@ int handle_keys(int o, t_vars *vars)
 		move_right();
 	else if (o == XK_a)
 		move_left();
-	else if (o == XK_Shift_L)
-		ft_sprint();
 	return (1);
 	
 

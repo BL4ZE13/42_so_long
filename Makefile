@@ -6,7 +6,7 @@
 #    By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 14:01:06 by diomarti          #+#    #+#              #
-#    Updated: 2023/03/28 16:55:40 by diomarti         ###   ########.fr        #
+#    Updated: 2023/04/05 10:56:05 by diomarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME = so_long
 SRCS_NAME =	main.c \
 			keys.c \
 			moves.c \
+			close_game.c \
+			utils.c 
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -Imlx -g -fsanitize=address
