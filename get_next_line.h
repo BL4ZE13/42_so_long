@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:53:13 by diomarti          #+#    #+#             */
-/*   Updated: 2022/12/05 11:50:48 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:37:42 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 
 char	*get_next_line(int fd);
 
-int		ft_strlen(char *str);
+int		ft_strlen_mod(char *str);
 
-char	*ft_strjoin(char *str1, char *str2);
+char	*ft_strjoin_mod(char *str1, char *str2);
 
 int		ft_clear(char *str);
 

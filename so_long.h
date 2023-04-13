@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/12 14:52:50 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:56:34 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "libft/libft.h"
 #include "ft_printf/ft_printf.h"
-#include "gnl/get_next_line.h"
+#include "get_next_line.h"
 #include "mlx_linux/mlx.h"
 #include <X11/keysym.h>
 #include <X11/X.h>
@@ -49,7 +49,7 @@ typedef struct	s_all
 }			t_all;
 
 // MAIN
-int ft_close();
+int		ft_close();
 t_all	*all(void);
 
 // KEYS
@@ -63,10 +63,10 @@ void	move_left();
 void	print_steps();
 
 // MAP
-int check_all(t_map map);
-int	map_lines(char *path);
-static t_map	get_map(char *path);
+int		check_all(t_map map);
+int		map_lines(char *path);
+t_map	get_map(char *path);
 void	free_map(t_map *map);
-t_map create_map(char *path);
+t_map	create_map(char *path);
 
 #endif

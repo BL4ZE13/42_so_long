@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:00:17 by diomarti          #+#    #+#             */
-/*   Updated: 2022/12/07 15:11:48 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:57:29 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../get_next_line.h"
 
 char	*get_next_line(int fd)
 {
@@ -28,7 +28,7 @@ char	*get_next_line(int fd)
 	line = NULL;
 	while (saved[0] || read(fd, saved, BUFFER_SIZE) > 0)
 	{
-		line = ft_strjoin(line, saved);
+		line = ft_strjoin_mod(line, saved);
 		if (ft_clear(saved))
 			break ;
 	}

@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:09:02 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/12 14:51:43 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:00:13 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ int	map_lines(char *path)
 	char	buff;
 	
 	fd = open(path, O_RDONLY);
-	if (fd < 0)
+	if (fd == -1)
 		exit(write(2, "Invalid fd!\n", 12));
+	lines = 0;
 	while (read(fd, &buff, 1))
-		if (buff == "\n")
+		if (buff == '\n')
 			lines++;
 	close(fd);
 	return (lines);
 }
 
-static t_map	get_map(char *path)
+t_map	get_map(char *path)
 {
 	int i;
 	int fd;
@@ -37,7 +38,7 @@ static t_map	get_map(char *path)
 	map.map_h = map_lines(path);
 	map.mat = malloc((map.map_h + 1) * sizeof(char *));
 	fd = open(path, O_RDONLY);
-	if (map.map_h < 2 | !map.mat | fd < 0)
+	if (map.map_h < 2 || !map.mat || fd < 0)
 	{
 		ft_putstr_fd("Error creating map!\n", 1);
 		free_map(&map);
@@ -68,7 +69,7 @@ t_map create_map(char *path)
 	
 	if (ft_strncmp(path + ft_strlen(path) - 4, ".ber", 4))
 	{
-		ft_putstr_fd("Error! Invalid file type", 2);
+		ft_putstr_fd("Error! Invalid file type!\n", 2);
 		exit(EXIT_FAILURE);
 	}
 	map = get_map(path);

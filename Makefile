@@ -6,7 +6,7 @@
 #    By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 14:01:06 by diomarti          #+#    #+#              #
-#    Updated: 2023/04/05 10:56:05 by diomarti         ###   ########.fr        #
+#    Updated: 2023/04/13 11:57:07 by diomarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ SRCS_NAME =	main.c \
 			keys.c \
 			moves.c \
 			close_game.c \
-			utils.c 
+			utils.c \
+			map.c \
+			check_map.c \
+			get_next_line_utils.c \
+			get_next_line.c
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -Imlx -g -fsanitize=address
