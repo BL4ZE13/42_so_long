@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:03:20 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/13 13:36:15 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:20:36 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,20 @@ t_all	*all(void)
 	static t_all	all;
 
 	return (&all);
+}
+
+void	init_img(t_images *img)
+{
+	int i;
+	
+	img->wall = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->flor = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->col = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->en = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->pl = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->ext = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+
+	
 }
 
 int main(int ac, char **av)

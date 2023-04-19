@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 11:50:53 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:08:18 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_map
 
 typedef struct s_images
 {
+	void	*mlx;
+	void	*win;
 	void	*wall;
 	void	*flor;
 	void	*pl;
