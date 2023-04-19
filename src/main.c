@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:03:20 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 13:20:36 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:01:37 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_all	*all(void)
 	return (&all);
 }
 
-void	init_img(t_images *img)
+void	init_img(t_all *img)
 {
 	int i;
 	
@@ -41,10 +41,11 @@ int main(int ac, char **av)
 		exit(write(2, "Error\n", 6));
 	(*all()).map = create_map(av[1]);
 	(*all()).mlx = mlx_init();
+	init_img(all());
 	(*all()).win = mlx_new_window((*all()).mlx, (*all()).map.map_w * 64, (*all()).map.map_h * 64, "so_long");
-	mlx_hook((*all()).win, 17, 0, ft_close, NULL);
+	mlx_hook((*all()).win, 17, 1, ft_close, NULL);
 	mlx_hook((*all()).win, 2, 1L<<0, handle_keys, NULL);
-	//mlx_key_hook((*all()).win, handle_keys, NULL);
+	put_images((*all()).map.mat, (*all()));
 	mlx_loop((*all()).mlx);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 13:08:18 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/19 15:07:48 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,17 @@ typedef struct s_map
 	char	**mat;
 }			t_map;
 
-typedef struct s_images
-{
-	void	*mlx;
-	void	*win;
-	void	*wall;
-	void	*flor;
-	void	*pl;
-	void	*col;
-	void	*en;
-	void	*ext;
-	t_map	map;
-	
-}			t_images;
-
 typedef struct	s_all
 {
-	t_player	player;
-	t_map		map;	
+	t_map		map;
 	void		*mlx;
 	void		*win;
+	void		*wall;
+	void		*flor;
+	void		*pl;
+	void		*col;
+	void		*en;
+	void		*ext;
 	int			steps;
 
 }			t_all;
@@ -64,6 +55,8 @@ typedef struct	s_all
 // MAIN
 int		ft_close();
 t_all	*all(void);
+void	init_img(t_all *img);
+
 
 // KEYS
 int		handle_keys(int o);
@@ -72,14 +65,17 @@ void	move_back();
 void	move_right();
 void	move_left();
 
-// UTILS
-void	print_steps();
-
 // MAP
 int		check_all(t_map map);
 int		map_lines(char *path);
 t_map	get_map(char *path);
 void	free_map(t_map *map);
 t_map	create_map(char *path);
+
+//IMG
+void    choose_image(char c, int x, int y, t_all img);
+void	print_steps();
+void    put_images(char **map, t_all img);
+
 
 #endif

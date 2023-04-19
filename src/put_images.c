@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   put_images.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:13:13 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 13:22:51 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:08:35 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void    choose_image(char c, int x, int y, t_images img)
+void    choose_image(char c, int x, int y, t_all img)
 {
 	if (c == '1')
-		mlx_put_image_to_window(img.mlx, img.win, img.wall, x, y);
+		mlx_put_image_to_window(img.mlx, img.win, img.wall, x * 64, y * 64);
 	if (c == '0')
-		mlx_put_image_to_window(img.mlx, img.win, img.flor, x, y);
+		mlx_put_image_to_window(img.mlx, img.win, img.flor, x * 64, y * 64);
 	if (c == 'C')
-		mlx_put_image_to_window(img.mlx, img.win, img.col, x, y);
+		mlx_put_image_to_window(img.mlx, img.win, img.col, x * 64, y * 64);
 	if (c == 'P')
-		mlx_put_image_to_window(img.mlx, img.win, img.pl, x, y);
+		mlx_put_image_to_window(img.mlx, img.win, img.pl, x * 64, y * 64);
 	if (c == 'X')
-		mlx_put_image_to_window(img.mlx, img.win, img.en, x, y);
+		mlx_put_image_to_window(img.mlx, img.win, img.en, x * 64, y * 64);
 	if (c == 'E')
-		mlx_put_image_to_window(img.mlx, img.win, img.ext, x, y);
+		mlx_put_image_to_window(img.mlx, img.win, img.ext, x * 64, y * 64);
 }
 
-void    put_images(char **map, t_images img)
+void    put_images(char **map, t_all img)
 {
     int i;
     int j;
@@ -45,4 +45,16 @@ void    put_images(char **map, t_images img)
         i++;
     }
     print_steps();
+}
+
+void	print_steps()
+{
+	char	*steps;
+	char	*str;
+	
+	steps = ft_itoa((*all()).steps);
+	str = ft_strjoin("steps: ", steps);
+	mlx_string_put((*all()).mlx, (*all()).win, 50, 50, 0xFFFFFFFF, str);
+	free(steps);
+	free(str);
 }
