@@ -6,7 +6,7 @@
 #    By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 14:01:06 by diomarti          #+#    #+#              #
-#    Updated: 2023/04/13 11:57:07 by diomarti         ###   ########.fr        #
+#    Updated: 2023/04/19 12:09:16 by diomarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,11 +68,11 @@ $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c $(MLX_LIB)
 
 clean:
 		make clean -C $(FT_PRINTF_PATH)
-		rm -rf $(NAME)
+		rm -rf $(OBJS)
 
 fclean: clean
 		make fclean -C $(FT_PRINTF_PATH)
-		rm -f $(NAME)
+		rm -rf $(NAME)
 
 re: fclean all
 

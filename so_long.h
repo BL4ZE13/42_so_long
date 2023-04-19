@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/13 11:56:34 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/19 11:50:53 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,19 @@ typedef struct s_map
 	int		map_h;
 	int		map_w;
 	char	**mat;
-
 }			t_map;
+
+typedef struct s_images
+{
+	void	*wall;
+	void	*flor;
+	void	*pl;
+	void	*col;
+	void	*en;
+	void	*ext;
+	t_map	map;
+	
+}			t_images;
 
 typedef struct	s_all
 {

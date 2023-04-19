@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   put_images.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/05 10:52:41 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 12:14:34 by diomarti         ###   ########.fr       */
+/*   Created: 2023/04/19 12:13:13 by diomarti          #+#    #+#             */
+/*   Updated: 2023/04/19 12:40:11 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	print_steps()
+void    choose_image(t_images img)
+
+void    put_images(char **map, t_images img)
 {
-	char	*steps;
-	char	*str;
-	
-	steps = ft_itoa((*all()).steps + 1);
-	str = ft_strjoin("steps: ", steps);
-	(*all()).steps++;
-	mlx_clear_window((*all()).mlx, (*all()).win);
-	mlx_string_put((*all()).mlx, (*all()).win, 50, 50, 0xFFFFFFFF, str);
-	free(steps);
-	free(str);
+    int i;
+    int j;
+    
+    i = 0;
+    while (map[i])
+    {
+        j = 0;
+        while (map[i][j] != '\n')
+        {
+            choose_image(img);
+            j++;
+        }
+        i++;
+    }
+    print;
+
+    
 }
