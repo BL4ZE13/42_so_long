@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:03:20 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/20 13:07:22 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/21 17:29:30 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ void	init_img(t_all *img)
 	
 	img->wall = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
 	img->flor = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
-	img->col = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->cl = mlx_xpm_file_to_image(img->mlx, "images/col.xpm", &i, &i);
 	img->en = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
-	img->pl_u = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
-	img->pl_d = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
-	img->pl_l = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
-	img->pl_r = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
-	img->ext = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
-	img->pl_c = img->pl_u;
+	img->pl_u = mlx_xpm_file_to_image(img->mlx, "images/pl_u.xpm", &i, &i);
+	img->pl_d = mlx_xpm_file_to_image(img->mlx, "images/pl_d.xpm", &i, &i);
+	img->pl_l = mlx_xpm_file_to_image(img->mlx, "images/pl_l.xpm", &i, &i);
+	img->pl_r = mlx_xpm_file_to_image(img->mlx, "images/pl_r.xpm", &i, &i);
+	img->ext_f = mlx_xpm_file_to_image(img->mlx, "images/porta_f.xpm", &i, &i);
+	img->ext_a = mlx_xpm_file_to_image(img->mlx, "images/porta_a.xpm", &i, &i);
+	img->pl_i = img->pl_r;
+	img->nbr_cl = check_elements(img->map, 'C');
 
 	
 }

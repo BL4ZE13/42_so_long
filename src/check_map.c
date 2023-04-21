@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:43:45 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/12 14:49:31 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:30:49 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int check_rect(t_map map)
 	return (1);
 }
 
-static int check_elements(t_map map, char c)
+int check_elements(t_map map, char c)
 {
 	int	i;
 	int	j;
@@ -69,7 +69,7 @@ static int check_elements(t_map map, char c)
 		}
 		i++;
 	}
-	return (1);
+	return (counter);
 }
 
 int check_all(t_map map)

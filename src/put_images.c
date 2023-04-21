@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:13:13 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 16:08:35 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/21 17:19:11 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void    choose_image(char c, int x, int y, t_all img)
 	if (c == '0')
 		mlx_put_image_to_window(img.mlx, img.win, img.flor, x * 64, y * 64);
 	if (c == 'C')
-		mlx_put_image_to_window(img.mlx, img.win, img.col, x * 64, y * 64);
+		mlx_put_image_to_window(img.mlx, img.win, img.cl, x * 64, y * 64);
 	if (c == 'P')
-		mlx_put_image_to_window(img.mlx, img.win, img.pl, x * 64, y * 64);
+		mlx_put_image_to_window(img.mlx, img.win, img.pl_i, x * 64, y * 64);
 	if (c == 'X')
 		mlx_put_image_to_window(img.mlx, img.win, img.en, x * 64, y * 64);
 	if (c == 'E')
-		mlx_put_image_to_window(img.mlx, img.win, img.ext, x * 64, y * 64);
+		mlx_put_image_to_window(img.mlx, img.win, img.ext_f, x * 64, y * 64);
 }
 
 void    put_images(char **map, t_all img)

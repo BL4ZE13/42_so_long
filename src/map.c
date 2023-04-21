@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:09:02 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/13 12:00:13 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/21 17:14:17 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,11 @@ t_map	get_map(char *path)
 
 void	free_map(t_map *map)
 {
+	int	i;
+
+	i = 0;
+	while (map->mat[i])
+		free(map->mat[i++]);
 	free(map->mat);
 }
 

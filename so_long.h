@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/20 13:06:49 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/21 17:17:10 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 //structs
 typedef struct s_player
 {
-	int x;
-	int y;
+	int		x;
+	int		y;
 }			t_player;
 
 typedef struct s_map
@@ -44,14 +44,16 @@ typedef struct	s_all
 	void		*win;
 	void		*wall;
 	void		*flor;
-	void		*pl_c;
+	void		*pl_i;
 	void		*pl_u;
 	void		*pl_d;
 	void		*pl_r;
 	void		*pl_l;
-	void		*col;
+	void		*cl;
 	void		*en;
-	void		*ext;
+	void		*ext_f;
+	void		*ext_a;
+	int			nbr_cl;
 	int			steps;
 
 }			t_all;
@@ -60,6 +62,7 @@ typedef struct	s_all
 int		ft_close();
 t_all	*all(void);
 void	init_img(t_all *img);
+void 	exit_game(char *str);
 
 
 // KEYS
@@ -72,11 +75,16 @@ int		map_lines(char *path);
 t_map	get_map(char *path);
 void	free_map(t_map *map);
 t_map	create_map(char *path);
+int check_elements(t_map map, char c);
 
 //IMG
 void    choose_image(char c, int x, int y, t_all img);
 void	print_steps();
 void    put_images(char **map, t_all img);
 
+//MOVES
+t_player find_player(char **map);
+void	move_player(char **map, int x, int y);
+int check_colision(char **map, int x, int y, char c);
 
 #endif
