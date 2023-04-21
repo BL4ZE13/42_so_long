@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:03:20 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 16:01:37 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:07:22 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,12 @@ void	init_img(t_all *img)
 	img->flor = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
 	img->col = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
 	img->en = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
-	img->pl = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->pl_u = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->pl_d = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->pl_l = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->pl_r = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
 	img->ext = mlx_xpm_file_to_image(img->mlx, "images/wall.xpm", &i, &i);
+	img->pl_c = img->pl_u;
 
 	
 }

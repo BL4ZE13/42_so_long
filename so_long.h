@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 15:07:48 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:06:49 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ typedef struct	s_all
 	void		*win;
 	void		*wall;
 	void		*flor;
-	void		*pl;
+	void		*pl_c;
+	void		*pl_u;
+	void		*pl_d;
+	void		*pl_r;
+	void		*pl_l;
 	void		*col;
 	void		*en;
 	void		*ext;
@@ -60,10 +64,7 @@ void	init_img(t_all *img);
 
 // KEYS
 int		handle_keys(int o);
-void	move_front();
-void	move_back();
-void	move_right();
-void	move_left();
+void	move_player(char **map, int x, int y);
 
 // MAP
 int		check_all(t_map map);

@@ -6,32 +6,57 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 16:39:39 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/19 16:08:29 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:13:40 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	move_front()
+t_player find_player(char **map)
 {
-	(*all()).steps += 1;
-	print_steps();
+	t_player coords;
+	
+	coords.y = 0;
+	while (map[coords.y])
+	{
+		coords.x = 0;
+		while (map[coords.y][coords.x])
+		{
+			if (map[coords.y][coords.x] == 'P')
+				return (coords);
+			coords.x++;
+		}
+		coords.y++;
+	}
+	return (coords);
 }
 
-void	move_back()
+int check_colision(char **map, int x, int y, char c)
 {
-	(*all()).steps += 1;
-	print_steps();
+	t_player p;
+
+	if (map[p.y + y][p.x + x] == c)
+		return (1);
+	return (0);	
 }
 
-void	move_right()
+void	move_player(char **map, int x, int y)
 {
-	(*all()).steps += 1;
-	print_steps();
-}
+	t_player p;
 
-void	move_left()
-{
-	(*all()).steps += 1;
-	print_steps();
+	p = find_player(map);
+	if (x > 0)
+		(*all()).pl_c = (*all()).pl_r;
+	if (x < 0)
+		(*all()).pl_c = (*all()).pl_l;
+	if (y > 0)
+		(*all()).pl_c = (*all()).pl_u;
+	if (y < 0)
+		(*all()).pl_c = (*all()).pl_d;
+	if (check_colision(map, x, y, 'E'))
+		exit(EXIT_SUCCESS);
+	if (check_colision(map, x, y, 'X'))
+		exit(EXIT_SUCCESS);
+
+	
 }
