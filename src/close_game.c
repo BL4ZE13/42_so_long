@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 14:15:57 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/21 17:39:24 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:19:23 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int ft_close()
 	mlx_destroy_image((*all()).mlx, (*all()).pl_u);
 	mlx_destroy_image((*all()).mlx, (*all()).cl);
 	mlx_destroy_image((*all()).mlx, (*all()).ext_f);
-	mlx_destroy_image((*all()).mlx, (*all()).ext_a);
+	// mlx_destroy_image((*all()).mlx, (*all()).ext_a);
 	free_map(&((*all()).map));
 	mlx_destroy_window((*all()).mlx, (*all()).win);
 	mlx_destroy_display((*all()).mlx);
@@ -47,7 +47,7 @@ void exit_game(char *str)
 	mlx_destroy_image((*all()).mlx, (*all()).flor);
 	mlx_destroy_image((*all()).mlx, (*all()).cl);
 	mlx_destroy_image((*all()).mlx, (*all()).ext_f);
-	mlx_destroy_image((*all()).mlx, (*all()).ext_a);
+	// mlx_destroy_image((*all()).mlx, (*all()).ext_a);
 	free_map(&((*all()).map));
 	mlx_destroy_window((*all()).mlx, (*all()).win);
 	mlx_destroy_display((*all()).mlx);

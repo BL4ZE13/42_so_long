@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:43:45 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/21 13:30:49 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:38:18 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int check_elements(t_map map, char c)
 	int	counter;
 
 	i = 0;
+	counter = 0;
 	while (i < map.map_h)
 	{
 		j = 0;
@@ -63,7 +64,7 @@ int check_elements(t_map map, char c)
 				counter++;
 			if (map.mat[i][j] != '1' && map.mat[i][j] != '0' && \
 				map.mat[i][j] != 'C' && map.mat[i][j] != 'E' && \
-				map.mat[i][j] != 'P')
+				map.mat[i][j] != 'P' && map.mat[i][j] != 'X')
 				return (0);
 			j++;
 		}

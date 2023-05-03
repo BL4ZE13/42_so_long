@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 16:39:39 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/21 17:42:55 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:36:54 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,13 @@ void	move_player(char **map, int x, int y)
 	if (y < 0)
 		(*all()).pl_i = (*all()).pl_u;
 	if (check_colision(map, x, y, 'E') && (*all()).nbr_cl == 0)
-		exit_game("WON");
+		exit_game("YOU WON!!!\n");
 	if (check_colision(map, x, y, 'X'))
-		exit_game("LOSE");
+		exit_game("YOU LOSE!!!\n");
 	if (!check_colision(map, x, y, '1') && !check_colision(map, x, y, 'X'))
 	{
 		if (check_colision(map, x, y, 'C'))
 			(*all()).nbr_cl--;
-		// if ((*all()).nbr_cl == 0)
-		// 	(*all()).ext_f = (*all()).ext_a;
 		if (!check_colision(map, x, y, 'E'))
 		{
 			map[p.y][p.x] = '0';

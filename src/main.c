@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:03:20 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/21 17:29:30 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:21:37 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_img(t_all *img)
 	img->pl_l = mlx_xpm_file_to_image(img->mlx, "images/pl_l.xpm", &i, &i);
 	img->pl_r = mlx_xpm_file_to_image(img->mlx, "images/pl_r.xpm", &i, &i);
 	img->ext_f = mlx_xpm_file_to_image(img->mlx, "images/porta_f.xpm", &i, &i);
-	img->ext_a = mlx_xpm_file_to_image(img->mlx, "images/porta_a.xpm", &i, &i);
+	// img->ext_a = mlx_xpm_file_to_image(img->mlx, "images/porta_a.xpm", &i, &i);
 	img->pl_i = img->pl_r;
 	img->nbr_cl = check_elements(img->map, 'C');
 
@@ -41,8 +41,6 @@ void	init_img(t_all *img)
 
 int main(int ac, char **av)
 {
-	// (void)ac;
-	// (void)av;
 	if (ac != 2)
 		exit(write(2, "Error\n", 6));
 	(*all()).map = create_map(av[1]);
