@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:13:13 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/21 17:19:11 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/05 10:20:38 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    choose_image(char c, int x, int y, t_all img)
 {
 	if (c == '1')
-		mlx_put_image_to_window(img.mlx, img.win, img.wall, x * 64, y * 64);
+		put_bords(x, y, img);
 	if (c == '0')
 		mlx_put_image_to_window(img.mlx, img.win, img.flor, x * 64, y * 64);
 	if (c == 'C')
@@ -26,6 +26,28 @@ void    choose_image(char c, int x, int y, t_all img)
 		mlx_put_image_to_window(img.mlx, img.win, img.en, x * 64, y * 64);
 	if (c == 'E')
 		mlx_put_image_to_window(img.mlx, img.win, img.ext_f, x * 64, y * 64);
+}
+
+void	put_bords(int x, int y, t_all img)
+{
+	if (x == 0 && y == 0)
+		mlx_put_image_to_window(img.mlx, img.win, img.canto_ce, x * 64, y * 64);
+	else if (x == img.map.map_w - 1 && y == 0)
+		mlx_put_image_to_window(img.mlx, img.win, img.canto_cd, x * 64, y * 64);
+	else if (x == img.map.map_w - 1 && y == img.map.map_h - 1)
+		mlx_put_image_to_window(img.mlx, img.win, img.canto_bd, x * 64, y * 64);
+	else if (x == 0 && y == img.map.map_h - 1)
+		mlx_put_image_to_window(img.mlx, img.win, img.canto_be, x * 64, y * 64);
+	else if (x == 0 && y < img.map.map_h - 1 && y > 0)
+		mlx_put_image_to_window(img.mlx, img.win, img.borda_e, x * 64, y * 64);
+	else if (x == img.map.map_w - 1 && y < img.map.map_h - 1 && y > 0)
+		mlx_put_image_to_window(img.mlx, img.win, img.borda_d, x * 64, y * 64);
+	else if (x < img.map.map_w - 1 && x > 0 && y == 0)
+		mlx_put_image_to_window(img.mlx, img.win, img.borda_c, x * 64, y * 64);
+	else if (x < img.map.map_w - 1 && x > 0 && y == img.map.map_h - 1)
+		mlx_put_image_to_window(img.mlx, img.win, img.borda_b, x * 64, y * 64);
+	else
+		mlx_put_image_to_window(img.mlx, img.win, img.wall, x * 64, y * 64);
 }
 
 void    put_images(char **map, t_all img)

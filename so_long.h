@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/21 17:17:10 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/05 11:19:44 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ typedef struct	s_all
 	void		*win;
 	void		*wall;
 	void		*flor;
+	void		*canto_cd;
+	void		*canto_ce;
+	void		*canto_bd;
+	void		*canto_be;
+	void		*borda_d;
+	void		*borda_e;
+	void		*borda_c;
+	void		*borda_b;
 	void		*pl_i;
 	void		*pl_u;
 	void		*pl_d;
@@ -52,7 +60,7 @@ typedef struct	s_all
 	void		*cl;
 	void		*en;
 	void		*ext_f;
-	void		*ext_a;
+	int			nbr_en;
 	int			nbr_cl;
 	int			steps;
 
@@ -81,10 +89,15 @@ int check_elements(t_map map, char c);
 void    choose_image(char c, int x, int y, t_all img);
 void	print_steps();
 void    put_images(char **map, t_all img);
+void	put_bords(int x, int y, t_all img);
 
 //MOVES
 t_player find_player(char **map);
 void	move_player(char **map, int x, int y);
 int check_colision(char **map, int x, int y, char c);
+t_player find_en(char **map);
+int check_colision_en(char **map, int x, int y, char c);
+void move_en(char **map, int x, int y);
+int en(t_all *all);
 
 #endif

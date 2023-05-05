@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 14:15:57 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/02 15:19:23 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/05 10:29:02 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ int ft_close()
 	mlx_destroy_image((*all()).mlx, (*all()).pl_u);
 	mlx_destroy_image((*all()).mlx, (*all()).cl);
 	mlx_destroy_image((*all()).mlx, (*all()).ext_f);
+	mlx_destroy_image((*all()).mlx, (*all()).canto_bd);
+	mlx_destroy_image((*all()).mlx, (*all()).canto_be);
+	mlx_destroy_image((*all()).mlx, (*all()).canto_cd);
+	mlx_destroy_image((*all()).mlx, (*all()).canto_ce);
+	mlx_destroy_image((*all()).mlx, (*all()).borda_b);
+	mlx_destroy_image((*all()).mlx, (*all()).borda_c);
+	mlx_destroy_image((*all()).mlx, (*all()).borda_e);
+	mlx_destroy_image((*all()).mlx, (*all()).borda_d);
 	// mlx_destroy_image((*all()).mlx, (*all()).ext_a);
 	free_map(&((*all()).map));
 	mlx_destroy_window((*all()).mlx, (*all()).win);
@@ -36,6 +44,14 @@ void exit_game(char *str)
 	mlx_destroy_image((*all()).mlx, (*all()).pl_l);
 	mlx_destroy_image((*all()).mlx, (*all()).pl_r);
 	mlx_destroy_image((*all()).mlx, (*all()).pl_u);
+	mlx_destroy_image((*all()).mlx, (*all()).canto_bd);
+	mlx_destroy_image((*all()).mlx, (*all()).canto_be);
+	mlx_destroy_image((*all()).mlx, (*all()).canto_cd);
+	mlx_destroy_image((*all()).mlx, (*all()).canto_ce);
+	mlx_destroy_image((*all()).mlx, (*all()).borda_b);
+	mlx_destroy_image((*all()).mlx, (*all()).borda_c);
+	mlx_destroy_image((*all()).mlx, (*all()).borda_e);
+	mlx_destroy_image((*all()).mlx, (*all()).borda_d);
 	if (check_elements((*all()).map, 'X'))
 	{
 		mlx_destroy_image((*all()).mlx, (*all()).en);
