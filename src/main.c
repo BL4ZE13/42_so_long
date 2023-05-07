@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:03:20 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/07 20:16:00 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:44:45 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 			(*all()).map.map_h * 64, "so_long");
 	mlx_hook((*all()).win, 17, 1, ft_close, NULL);
 	mlx_hook((*all()).win, 2, 1L << 0, handle_keys, NULL);
-	put_img((*all()).map.mat, (*all()));
+	put_images((*all()).map.mat, (*all()));
 	mlx_loop((*all()).mlx);
 	return (0);
 }

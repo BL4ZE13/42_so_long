@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/07 20:25:02 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:51:33 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,6 @@ void		put_bords(int x, int y, t_all img);
 t_player	find_player(char **map);
 void		move_player(char **map, int x, int y);
 int			check_colision(char **map, int x, int y, char c);
-t_player	find_en(char **map, int n);
-int			check_colision_en(char **map, t_player coords, char c, int n);
-void		choose_en_move(t_player *coords);
-void		move_en(char **map, int n);
-int			en(t_all *all);
 void		select_move(int x, int y);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_images.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:13:13 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/07 20:33:04 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:50:18 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	put_images(char **map, t_all img)
 		}
 		i++;
 	}
-	print_steps(void);
+	print_steps();
 }
 
 void	print_steps(void)
