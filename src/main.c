@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:03:20 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/05 11:09:52 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 19:29:43 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	init_img(t_all *img)
 	img->wall = mlx_xpm_file_to_image(img->mlx, "images/parede.xpm", &i, &i);
 	img->flor = mlx_xpm_file_to_image(img->mlx, "images/floor.xpm", &i, &i);
 	img->cl = mlx_xpm_file_to_image(img->mlx, "images/moeda.xpm", &i, &i);
-	img->en = mlx_xpm_file_to_image(img->mlx, "images/canto_bd.xpm", &i, &i);
+	img->en = mlx_xpm_file_to_image(img->mlx, "images/en.xpm", &i, &i);
 	img->pl_u = mlx_xpm_file_to_image(img->mlx, "images/pl_u.xpm", &i, &i);
 	img->pl_d = mlx_xpm_file_to_image(img->mlx, "images/pl_d.xpm", &i, &i);
 	img->pl_l = mlx_xpm_file_to_image(img->mlx, "images/pl_l.xpm", &i, &i);
@@ -40,7 +40,6 @@ void	init_img(t_all *img)
 	img->borda_c = mlx_xpm_file_to_image(img->mlx, "images/borda_cima.xpm", &i, &i);
 	img->borda_e = mlx_xpm_file_to_image(img->mlx, "images/borda_esq.xpm", &i, &i);
 	img->borda_d = mlx_xpm_file_to_image(img->mlx, "images/borda_dir.xpm", &i, &i);
-	// img->ext_a = mlx_xpm_file_to_image(img->mlx, "images/porta_a.xpm", &i, &i);
 	img->pl_i = img->pl_r;
 	img->nbr_cl = check_elements(img->map, 'C');
 	img->nbr_en = check_elements(img->map, 'X');

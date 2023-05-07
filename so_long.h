@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/05 11:19:44 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 18:55:51 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,10 @@ void	put_bords(int x, int y, t_all img);
 t_player find_player(char **map);
 void	move_player(char **map, int x, int y);
 int check_colision(char **map, int x, int y, char c);
-t_player find_en(char **map);
-int check_colision_en(char **map, int x, int y, char c);
-void move_en(char **map, int x, int y);
+t_player find_en(char **map, int n);
+int check_colision_en(char **map, t_player coords, char c, int n);
+void choose_en_move(t_player *coords);
+void move_en(char **map, int n);
 int en(t_all *all);
 
 #endif

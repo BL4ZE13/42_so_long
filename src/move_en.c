@@ -6,24 +6,28 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 10:45:03 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/05 11:21:06 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 19:04:01 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-t_player find_en(char **map)
+t_player find_en(char **map, int n)
 {
 	t_player coords;
+    int j;
 	
 	coords.y = 0;
+    j = 0;
 	while (map[coords.y])
 	{
 		coords.x = 0;
 		while (map[coords.y][coords.x])
 		{
-			if (map[coords.y][coords.x] == 'X')
+			if (map[coords.y][coords.x] == 'X' && n == j)
 				return (coords);
+            if (map[coords.y][coords.x] == 'X')
+                j++;
 			coords.x++;
 		}
 		coords.y++;
@@ -31,50 +35,62 @@ t_player find_en(char **map)
 	return (coords);
 }
 
-int check_colision_en(char **map, int x, int y, char c)
+int check_colision_en(char **map, t_player coords, char c, int n)
 {
 	t_player en;
 
-	en = find_en(map);
-	if (map[en.y + y][en.x + x] == c)
+	en = find_en(map, n);
+	if (map[en.y + coords.y][en.x + coords.x] == c)
 		return (1);
 	return (0);	
 }
 
-void move_en(char **map, int x, int y)
+void choose_en_move(t_player *coords)
+{
+    int nb;
+    
+    nb = rand() % 2 + 1;
+    if (nb == 1)
+        coords->x = 1;
+    if (nb == 2)
+        coords->x = -1;
+}
+
+void move_en(char **map, int n)
 {
     t_player en;
+    t_player move;
     
-    en = find_en(map);
-    if (check_colision_en(map, x, y, 'P'))
-        exit_game("YOU LOSE!!!");
-    else if(!check_colision(map, x, y, '1') && !check_colision(map, x, y, 'C') && \
-        !check_colision(map, x, y, 'E'))
+    move.x = 0;
+    move.y = 0;
+    choose_en_move(&move);
+    en = find_en(map, n);
+    if (check_colision_en(map, move, 'P', n))
+        exit_game("YOU LOSE!!!\n");
+    else if(!check_colision_en(map, move, '1', n) && \
+    !check_colision_en(map, move, 'C', n) && \
+    !check_colision_en(map, move, 'E', n))
     {
-        while (map[en.x - 1][en.y] != '1')
-        {
-            map[en.x][en.y] = '0';
-            map[en.x - 1][en.y] = 'X';
-        }
-        while (map[en.x + 1][en.y] != '1')
-        {
-            map[en.x][en.y] = '0';
-            map[en.x + 1][en.y] = 'X';
-        }
+        map[en.y][en.x] = '0';
+        map[en.y + move.y][en.x + move.x] = 'X';
     }
 }
 
 int en(t_all *all)
 {
-    int i;
-    t_player en;
+    int n;
+    static int delay;
 
-    en = find_en(all->map.mat);
-    i = 0;
-    while (i < all->nbr_en)
-        move_en(all->map.mat, en.x, en.y);
+    n = 0;
+    if (delay < 3000)
+    {
+        delay++;
+        return (0);
+    }
+    move_en(all->map.mat, n);
     mlx_clear_window(all->mlx, all->win);
     put_images(all->map.mat, *all);
     mlx_key_hook(all->win, handle_keys, NULL);
+    delay = 0;
     return (0);
 }
