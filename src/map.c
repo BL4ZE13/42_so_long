@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:09:02 by diomarti          #+#    #+#             */
-/*   Updated: 2023/04/21 17:14:17 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:17:22 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	map_lines(char *path)
 	int		lines;
 	int		fd;
 	char	buff;
-	
+
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		exit(write(2, "Invalid fd!\n", 12));
@@ -31,9 +31,9 @@ int	map_lines(char *path)
 
 t_map	get_map(char *path)
 {
-	int i;
-	int fd;
-	t_map map;
+	int		i;
+	int		fd;
+	t_map	map;
 
 	map.map_h = map_lines(path);
 	map.mat = malloc((map.map_h + 1) * sizeof(char *));
@@ -68,10 +68,10 @@ void	free_map(t_map *map)
 	free(map->mat);
 }
 
-t_map create_map(char *path)
+t_map	create_map(char *path)
 {
 	t_map	map;
-	
+
 	if (ft_strncmp(path + ft_strlen(path) - 4, ".ber", 4))
 	{
 		ft_putstr_fd("Error! Invalid file type!\n", 2);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   keys.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 16:39:43 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/02 15:20:08 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:07:32 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int handle_keys(int o)
+int	handle_keys(int o)
 {
 	if (o == XK_Escape)
 		ft_close();

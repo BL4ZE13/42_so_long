@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 14:01:06 by diomarti          #+#    #+#              #
-#    Updated: 2023/05/05 11:20:11 by diomarti         ###   ########.fr        #
+#    Updated: 2023/05/07 20:00:48 by diomarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,6 @@ RM = rm -rf
 
 HEADER = so_long.h
 
-FT_PRINTF = ./ft_printf/libftprintf.a
-FT_PRINTF_PATH = ./ft_printf
-
 LIBFT = ./libft/libft.a
 LIBFT_PATH = ./libft
 
@@ -53,12 +50,9 @@ SRC = $(addprefix $(SRC_PATH)/, $(SRCS_NAME))
 
 all: $(NAME)
 
-$(NAME) : $(FT_PRINTF) $(LIBFT) $(OBJS)
+$(NAME) : $(LIBFT) $(OBJS)
 		make -s -C mlx_linux/
-		$(CC) $(CFLAGS) $(OBJS) $(FT_PRINTF) $(LIBFT) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
-
-$(FT_PRINTF): $(shell make -C $(FT_PRINTF_PATH) -q)
-	make -C$(FT_PRINTF_PATH)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
 
 $(LIBFT):  $(shell make -C $(LIBFT_PATH) -q)
 	make -C$(LIBFT_PATH)
@@ -68,11 +62,9 @@ $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c $(MLX_LIB)
 	$(CC) -c $(CFLAGS) $(LMLX_FLAGS) $(INC) $(MLX_INCLUDE)  $< -o $@
 
 clean:
-		make clean -C $(FT_PRINTF_PATH)
 		rm -rf $(OBJS)
 
 fclean: clean
-		make fclean -C $(FT_PRINTF_PATH)
 		rm -rf $(NAME)
 
 re: fclean all

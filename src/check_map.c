@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:43:45 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/02 15:38:18 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:06:57 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static int check_sides(t_map map)
+static int	check_sides(t_map map)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ static int check_sides(t_map map)
 	return (1);
 }
 
-static int check_up_down(t_map map)
+static int	check_up_down(t_map map)
 {
 	int	i;
 
@@ -40,14 +40,14 @@ static int check_up_down(t_map map)
 	return (1);
 }
 
-static int check_rect(t_map map)
+static int	check_rect(t_map map)
 {
 	if (map.map_h == map.map_w)
 		return (0);
 	return (1);
 }
 
-int check_elements(t_map map, char c)
+int	check_elements(t_map map, char c)
 {
 	int	i;
 	int	j;
@@ -73,7 +73,7 @@ int check_elements(t_map map, char c)
 	return (counter);
 }
 
-int check_all(t_map map)
+int	check_all(t_map map)
 {
 	if (!check_rect(map))
 	{

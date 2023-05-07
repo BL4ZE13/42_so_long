@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   close_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 14:15:57 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/07 19:36:04 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:07:25 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int ft_close()
+int	ft_close(void)
 {
 	mlx_destroy_image((*all()).mlx, (*all()).wall);
 	mlx_destroy_image((*all()).mlx, (*all()).flor);
@@ -37,7 +37,7 @@ int ft_close()
 	exit(EXIT_SUCCESS);
 }
 
-void exit_game(char *str)
+void	exit_game(char *str)
 {
 	mlx_destroy_image((*all()).mlx, (*all()).pl_d);
 	mlx_destroy_image((*all()).mlx, (*all()).pl_l);
