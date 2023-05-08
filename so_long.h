@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:53:42 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/07 20:51:33 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:14:28 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ t_map		get_map(char *path);
 void		free_map(t_map *map);
 t_map		create_map(char *path);
 int			check_elements(t_map map, char c);
+int		fill_flood(void);
 
 //IMG
 void		choose_image(char c, int x, int y, t_all img);

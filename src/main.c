@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:03:20 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/07 20:44:45 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:17:34 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	main(int ac, char **av)
 		exit(write(2, "Error\n", 6));
 	(*all()).map = create_map(av[1]);
 	(*all()).mlx = mlx_init();
+	if (!fill_flood())
+		return (0);
 	init_img(all());
 	(*all()).win = mlx_new_window((*all()).mlx, (*all()).map.map_w * 64,
 			(*all()).map.map_h * 64, "so_long");
