@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:24:31 by diomarti          #+#    #+#             */
-/*   Updated: 2023/05/08 17:14:14 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:26:14 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,25 @@ static int	check_all_collectible(char **map)
 	return (1);
 }
 
-char **get_map_copy(void)
+char	**get_map_copy(void)
 {
 	char	**ret;
 	int		i;
 	int		j;
 
 	i = 0;
-	// Ver protecoes de mallocs
 	ret = ft_calloc((*all()).map.map_h + 1, sizeof(char *));
+	if (!ret)
+		return (0);
 	while (i < (*all()).map.map_h)
 	{
 		ret[i] = ft_calloc((*all()).map.map_w + 1, sizeof(char));
 		j = 0;
+		if (!ret[i])
+		{
+			free_matrix(ret);
+			return (0);
+		}
 		while (j < (*all()).map.map_w)
 		{
 			ret[i][j] = (*all()).map.mat[i][j];
@@ -76,7 +82,7 @@ char **get_map_copy(void)
 
 void	free_matrix(char **matrix)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (matrix[i])
@@ -87,11 +93,11 @@ void	free_matrix(char **matrix)
 int	fill_flood(void)
 {
 	t_player	p;
-	int		flag;
-	char	**map;
+	int			flag;
+	char		**map;
 
 	flag = 0;
-	map =  get_map_copy();
+	map = get_map_copy();
 	p = find_player(map);
 	flood_fill(p.x + 1, p.y, &flag, map);
 	flood_fill(p.x - 1, p.y, &flag, map);
